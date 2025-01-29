@@ -2,6 +2,7 @@ import {PrismaClient} from "@prisma/client"
 
 // below is done only for dev environment
 declare global {
+    // eslint-disable-next-line no-var
     var prisma: PrismaClient | undefined
 }
 

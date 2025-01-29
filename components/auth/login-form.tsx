@@ -108,7 +108,8 @@ export const LoginForm = () => {
                     </div>
                     <FormError message={error || urlError}/>
                     <FormSuccess message={success} />
-                    <Button 
+                    <Button
+                        variant="gradient" 
                         type="submit" 
                         className="w-full" 
                         disabled={isPending} // to disable the input onSubmit

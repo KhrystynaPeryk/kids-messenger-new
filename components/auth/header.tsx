@@ -1,5 +1,5 @@
 import { Poppins } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 
 const font = Poppins({
     subsets: ['latin'],
@@ -13,10 +13,10 @@ interface HeaderProps {
 export const Header = ({label}: HeaderProps) => {
     return (
         <div className="w-full flex flex-col gap-y-4 items-center justify-center">
-            <h1 className={cn("text-3xl font-semibold", font.className)}>
-                🔐Auth
-            </h1>
-            <p className="text-muted-foreground text-sm">{label}</p>
+            <Avatar>
+                <AvatarImage height={48} width={48} src="/images/logo.png" />
+            </Avatar>
+            <p className={`text-muted-foreground text-sm ${font.className}`}>{label}</p>
         </div>
     )
 }

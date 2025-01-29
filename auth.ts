@@ -52,8 +52,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             if (session.user) {
                 session.user.name = token.name;
                 session.user.email = token.email as string
-
                 session.user.isOAuth = token.isOAuth as boolean
+
+                //more properties for a messenger
+                session.user.conversationIds = token.conversationIds as string[];
+                session.user.seenMessageIds = token.seenMessageIds as string[];
+                session.user.createdAt = new Date(token.createdAt as string);
+                session.user.updatedAt = new Date(token.updatedAt as string);
+
+                session.user.id = token.id as string
+                session.user.emailVerified = new Date(token.emailVerified as string)
+                session.user.password = token.password as string
             }
             return session
         },
@@ -77,11 +86,21 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             token.name = existingUser.name
             token.role = existingUser.role
             token.email = existingUser.email
+            
+            //more properties for a messenger
+            token.conversationIds = existingUser.conversationIds;
+            token.seenMessageIds = existingUser.seenMessageIds;
+            token.createdAt = existingUser.createAt;
+            token.updatedAt = existingUser.updatedAt;
+
+            token.id = existingUser.id
+            token.emailVerified = existingUser.emailVerified
+            token.password = existingUser.password
 
             return token
         }
     },
     adapter: PrismaAdapter(db),
-    session: {strategy: "jwt"},
+    session: {strategy: "jwt",},
     ...authConfig,
 })

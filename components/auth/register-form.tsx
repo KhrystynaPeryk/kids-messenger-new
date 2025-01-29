@@ -112,7 +112,8 @@ export const RegisterForm = () => {
                     </div>
                     <FormError message={error}/>
                     <FormSuccess message={success} />
-                    <Button 
+                    <Button
+                        variant="gradient" 
                         type="submit" 
                         className="w-full" 
                         disabled={isPending} // to disable the input onSubmit

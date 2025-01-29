@@ -11,7 +11,7 @@ export const publicRoutes = [
 
 /**
  * An array of routes that are used for authentication
- * These routes will redirect logged in users to /settings
+ * These routes will redirect logged in users to /users
  * @type {string[]}
  */
 
@@ -37,4 +37,4 @@ export const apiAuthPrefix = "/api/auth"
  */
 
 
-export const DEFAULT_LOGIN_REDIRECT = "/settings"
+export const DEFAULT_LOGIN_REDIRECT = "/users"

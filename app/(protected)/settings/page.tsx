@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react"
 import * as z from 'zod'
 import {useForm} from "react-hook-form"
 import { SettingsSchema } from "@/schemas"
-import {Form, FormField, FormControl, FormItem, FormDescription, FormLabel, FormMessage} from "@/components/ui/form"
+import {Form, FormField, FormControl, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useCurrentUser } from "@/hooks/use-current-user"
